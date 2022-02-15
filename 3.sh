@@ -1,10 +1,13 @@
-read -p "Enter the year: " year
-if (( $year%4 == 0 )) && (($year%100 != 0));
-then
-echo "$year is Leap year"
-elif (( $year%400 == 0 ));
-then
-echo "$year is Leap year"
-else
-echo "$year is a Not Leap year"
+read -p  "Enter numner:" n
+if (( $n == 1 ))
+then echo "Unit"
+elif (( $n == 10 ))
+then echo "Ten"
+elif (( $n == 100 ))
+then echo "Hundred"
+elif (( $n == 1000 ))
+then echo "Thousand"
+elif (( $n == 10000 ))
+then echo "Ten Thousand"
 fi
+
