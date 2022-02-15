@@ -1,16 +1,10 @@
-read -p  "Enter numner:" n
-if (( $n == 0 ))
-then echo "Sunday"
-elif (( $n == 1 ))
-then echo "Monday"
-elif (( $n == 2 ))
-then echo "Tuesday"
-elif (( $n ==3 ))
-then echo "Wednesday"
-elif (( $n == 4 ))
-then echo "Thursday"
-elif (( $n == 5 ))
-then echo "Friday"
-else
-echo "Saturday"
-fi
+read -p "Enter number:" n
+case $n  in
+0) echo "SUNDAY";;
+1) echo "MONDAY";;
+2) echo "TUESDAY";;
+3) echo "WEDNESDAY";;
+4) echo "THURSDAY";;
+5) echo "FRIDAY";;
+*) echo "SATURDAY";;
+esac
