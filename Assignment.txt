@@ -1,0 +1,192 @@
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ mkdir abc | mkdir def | mkdir ghi | mkdir jkl
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ touch abc.txt | touch def.txt | touch ghi.txt | touch jkl.txt
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ mv abc.txt abc | mv def.txt def | mv ghi.txt ghi | mv jkl.txt jkl
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ mkdir basename
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ mv abc basename | mv def basename | mv ghi basename | mv jkl basename
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ ^C
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ touch abc.log.1 | touch def.log.1 | touch ghi.log.1 | touch jkl.log.1
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ mv abc.log.1 abc.030222.log | mv def.log.1 def.030222.log | mv ghi.log.1 ghi.030222.log | mv jkl.log.1 jkl.030222.log
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ ^C
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/linux-content (master)
+$ cat data.csv
+Id EmployeeName JobTitle        BasePay OvertimePay OtherPay TotalPay TotalPayBenefits
+1  NATHANIEL    GM              167411  0           400184   567595   567595
+2  GARY         CAPTAIN         155966  245131      137811   538909   538909
+3  ALBERT       CAPTAIN         212739  106088      16452    335279   335279
+4  CHRISTOPHER  MECHANIC        77916   56120       198306   332343   332343
+5  PATRICK      DEPUTYCHIEF     134401  9737        182234   326373   326373
+6  DAVID        ASSTDEPUTY      118602  8601        189082   316285   316285
+7  ALSON        BATTALIONCHIEF  92492   89062       134426   315981   315981
+8  DAVID        DEPUTYDIRECTOR  256576  0           51322    307899   307899
+10 JOANNE       CHIEF           285262  0           17115    302377   302377
+12 PATRICIA     CAPTAIN         99722   87082       110804   297608   297608
+13 EDWARD       EXECUTIVE       294580  0           0        294580   294580
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/linux-content (master)
+$ cat data.csv | awk '{if ($4>= 10000) print $2 " " $7 }'
+EmployeeName TotalPay
+NATHANIEL 567595
+GARY 538909
+ALBERT 335279
+CHRISTOPHER 332343
+PATRICK 326373
+DAVID 316285
+ALSON 315981
+DAVID 307899
+JOANNE 302377
+PATRICIA 297608
+EDWARD 294580
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/linux-content (master)
+$ cat data.csv | awk '{if ($4>= 10000) print $2 " " }'
+EmployeeName
+NATHANIEL
+GARY
+ALBERT
+CHRISTOPHER
+PATRICK
+DAVID
+ALSON
+DAVID
+JOANNE
+PATRICIA
+EDWARD
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/linux-content (master)
+$ cat data.csv | grep CAPTAIN | awk '{ sum+=$4 } END {print sum/NR }'
+156142
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/linux-content (master)
+$ cat data.csv | grep CAPTAIN
+2  GARY         CAPTAIN         155966  245131      137811   538909   538909
+3  ALBERT       CAPTAIN         212739  106088      16452    335279   335279
+12 PATRICIA     CAPTAIN         99722   87082       110804   297608   297608
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/linux-content (master)
+$ cat data.csv | grep CAPTAIN | awk '{ sum+=$4 } END {print sum/NR }'
+156142
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/linux-content (master)
+$ cat data.csv | grep CAPTAIN | awk '{if ($5>=7000 && $5<=10000) print $3 "" $5}'
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/linux-content (master)
+$ cat data.csv | awk '{if ($5>=7000 && $5<=10000) print $3 "" $5}'              DEPUTYCHIEF9737
+ASSTDEPUTY8601
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/linux-content (master)
+$ cat data.csv | grep CAPTAIN | awk '{ sum+=$4 } END {print sum/NR }'           156142
+
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ mkdir original | mkdir updated
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ touch original-file.sh | touch updated_file.sh
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ cp original-file.sh original | cp updated_file.sh updated
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ cmkdir original-backup
+bash: cmkdir: command not found
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ mkdir original-backup
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ mv original original-backup
+
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ touch folderExist.sh
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ nano folderExist.sh
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ ls -l
+total 0
+-rw-r--r-- 1 eg1001 197121 0 Feb  3 21:41 abc.030222.log
+drwxr-xr-x 1 eg1001 197121 0 Feb  3 21:38 basename/
+-rw-r--r-- 1 eg1001 197121 0 Feb  3 21:41 def.030222.log
+-rw-r--r-- 1 eg1001 197121 0 Feb  3 21:47 folderExist.sh
+-rw-r--r-- 1 eg1001 197121 0 Feb  3 21:41 ghi.030222.log
+-rw-r--r-- 1 eg1001 197121 0 Feb  3 21:41 jkl.030222.log
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ nano folderExist.sh
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ bash folderExist.sh
+Not Exist
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ bash folderExist.sh
+Not Exist
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ nano folderExist.sh
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ bash folderExist.sh
+Exist
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ bash folderExist.sh
+Exist
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ locate folderExist.sh
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz/Assignment
+$ find folderExist.sh
+folderExist.sh
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ mkdir original | mkdir updated
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ touch original-file.sh | touch updated_file.sh
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ cp original-file.sh original | cp updated_file.sh updated
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ cmkdir original-backup
+bash: cmkdir: command not found
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ mkdir original-backup
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ cp original original-backup
+cp: -r not specified; omitting directory 'original'
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ cp original original-backup
+cp: -r not specified; omitting directory 'original'
+
+eg1001@LAPTOP-D2QN9H65 MINGW64 ~/Desktop/Brigelabz
+$ mv original original-backup
+
+
+
